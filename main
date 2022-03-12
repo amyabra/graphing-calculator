@@ -1,0 +1,96 @@
+_author__ = 'aabr5353'
+from turtle import*
+from math import*
+speed(0)
+#making the axes.number, and ticks
+for i in range(18):
+    color("magenta")
+    fd(50)
+    rt(90)
+    fd(10)
+    color("green")
+    write(i+1)
+    bk(20)
+    fd(10)
+    lt(90)
+    fd(10)
+home()
+for a in range(18):
+    color("magenta")
+    rt(90)
+    fd(10)
+    color("green")
+    write(-a)
+    bk(20)
+    fd(10)
+    lt(90)
+    fd(-55)
+home()
+lt(270)
+for k in range(2,18):
+    color("magenta")
+    fd(50)
+    rt(90)
+    fd(10)
+    color("green")
+    write(-k+1)
+    bk(20)
+    fd(10)
+    lt(90)
+    fd(10)
+home()
+rt(270)
+for l in range(1,18):
+    color("magenta")
+    fd(50)
+    rt(90)
+    fd(10)
+    color("green")
+    write(l)
+    bk(20)
+    fd(10)
+    lt(90)
+    fd(10)
+home()
+#asking what type of graph the user wants
+print("Please pick the type of equation you would like to graph and input the number associated with it")
+equation=int(input("1.linear equation 2.Quadratic equation 3.Trigonometric equation"))
+#finding the coordinates for the linear equation
+if(equation==1):
+    b=int(input("Enter the y intercept you would like"))
+    m=int(input("Enter the slope you would like"))
+    for i in range(-100,100):
+        for k in range(-100,100):
+            i=m*k+b
+            goto(i*50,k*50)
+#finding the coordinates for the quadratic equation
+elif(equation==2):
+    a=int(input("Enter the number you would like for the coefficent in front of x^2 to be"))
+    b=int(input("Enter the number you would like for the coefficent in front of the x to be"))
+    c=int(input("Enter the number you would like for the c to be"))
+    for j in range(-100,100):
+        for p in range(-100,100):
+            j=a*(p**2)+b*p+c
+            #plotting the coordinates
+            goto(j*50,p*50)
+#finding the coordinates for the trigonometric equations
+elif(equation==3):
+    choice=int(input("1.Sine graph 2.Cosine graph 3.Tangent graph"))
+    if (choice==1):
+        for y in range(-100,100):
+            for x in range(-100,100):
+                y=sin(x)
+                #plotting the coordinates
+                goto(x*50,y*50)
+    elif (choice==2):
+        for y in range(-100,100):
+            for x in range(-100,100):
+                y=cos(x)
+                #plotting the coordinates
+                goto(x*50,y*50)
+    elif (choice==3):
+        for y in range(-100,100):
+            for x in range(-100,100):
+                y=tan(x)
+                #plotting the coordinates
+                goto(x*50,y*50)
